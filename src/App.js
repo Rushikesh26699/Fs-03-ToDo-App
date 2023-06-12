@@ -1,24 +1,19 @@
-import logo from './logo.svg';
+import React,{useState} from 'react'
 import './App.css';
+import OutputBox from './Components/OutputBox';
+import InputBox from './Components/InputBox';
 
 function App() {
+const[currList,setCurrList]=useState([]);
+const [currValue,setCurrValue]=useState('');
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>TO_DO_APP</h1>
+      <InputBox currList={currList} setCurrList={setCurrList} currValue={currValue} setCurrValue={setCurrValue}/>
+      <OutputBox currList={currList} setCurrList={setCurrList} currValue={currValue} setCurrValue={setCurrValue}/>
+
     </div>
+  
   );
 }
 
